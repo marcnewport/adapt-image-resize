@@ -1,15 +1,27 @@
 {
   "name": "adapt-image-resize",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "npm cli to resize images in a directory to the standard Adapt sizes",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Marc Newport <marcnewport@gmail.com>",
-  "license": "ISC",
   "preferGlobal": true,
   "bin": {
     "adapt-image-resize": "index.js"
-  }
+  },
+  "author": "Marc Newport <marcnewport@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcnewport/adapt-image-resize.git"
+  },
+  "keywords": [
+    "imagemagick",
+    "cli",
+    "adapt",
+    "batch",
+    "image",
+    "resize"
+  ]
 }
