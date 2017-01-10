@@ -15,10 +15,18 @@ cd into the directory you want to resize all images in, and run either:
 ```
 adapt-image-resize
 ```
-This will copy all images to new sub-directories, and resize to the standard Adapt widths (heights will stay in proportion)
-
+This will copy all images to new sub-directories, and resize to basic Adapt widths (heights will stay in proportion)
+* menu: 420
+* narrow: 600
+* wide: 900
 
 ```
 adapt-image-resize --crop
 ```
 This will copy all images to new sub-directories, resize, centre, and crop to the standard Adapt sizes
+* accordion_full_width: 860x180
+* full_width: 900x400
+* gmcq_option: 700x700
+* menu_thumb: 420x180
+* single_width: 700x600
+* single_width_small: 700x408
