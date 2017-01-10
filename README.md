@@ -1,5 +1,5 @@
 # adapt-image-resize
-npm cli to resize images in a directory to the standard [Adapt](https://github.com/adaptlearning/adapt_framework) sizes
+npm cli to resize images in a directory to the standard [Adapt framework](https://github.com/adaptlearning/adapt_framework) sizes
 
 ## Installation
 
@@ -12,6 +12,7 @@ npm install adapt-image-resize -g
 ## Usage
 cd into the directory you want to resize all images in, and run either:
 
+
 ```
 adapt-image-resize
 ```
@@ -19,6 +20,7 @@ This will copy all images to new sub-directories, and resize to basic Adapt widt
 * menu: 420
 * narrow: 600
 * wide: 900
+
 
 ```
 adapt-image-resize --crop
