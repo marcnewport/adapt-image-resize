@@ -18,7 +18,7 @@ adapt-image-resize
 ```
 This will copy all images to new sub-directories, and resize to basic Adapt widths (heights will stay in proportion)
 * menu: 420
-* narrow: 600
+* narrow: 660
 * wide: 900
 
 
