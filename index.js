@@ -5,11 +5,14 @@ var fs = require('fs');
 
 var isWindows = process.platform === 'win32';
 var doCrop = process.argv[2] === '--crop';
+var background = process.argv[2] === '--background';
+
+var quality = 90;
 
 // Basic default sizes
 var sizes = {
   "menu": "420",
-  "narrow": "600",
+  "narrow": "660",
   "wide": "900"
 };
 
@@ -25,6 +28,13 @@ if (doCrop) {
   };
 }
 
+if (background) {
+    sizes = {
+        "background": "1440x1000",
+        "background_narrow": "520x1000"
+    };
+}
+
 
 // cmd for thumbnails (need to unescape caret with caret in windows)
 // exec('mogrify -resize 100x100^^ -gravity center -extent 100x100 -quality 100 -path src/assets/thumbs src/assets/*');
@@ -34,13 +44,13 @@ for (var name in sizes) {
 
   var size = sizes[name];
   var path = './'+ name;
-  var cmd = 'mogrify -resize '+ size +' -path '+ path +' ./*';
+  var cmd = 'mogrify -resize '+ size +' -quality '+ quality +' -path '+ path +' ./*';
 
-  if (doCrop) {
+  if (doCrop || background) {
     // Need to unescape caret with caret on windows
     var modifier = isWindows ? '^^' : '^';
 
-    cmd = 'mogrify -resize '+ size + modifier +' -gravity center -extent '+ size +' -path '+ path +' ./*';
+    cmd = 'mogrify -resize '+ size + modifier +' -gravity Center -extent '+ size +' -quality '+ quality +' -path '+ path +' ./*';
   }
 
   // Create the directories
@@ -49,6 +59,7 @@ for (var name in sizes) {
   }
 
   exec(cmd, function(error, stdout, stderr) {
+      // TODO : success/error reporting
     console.log(stdout);
   });
 }
