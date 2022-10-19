@@ -22,6 +22,9 @@ This will copy all images to new sub-directories, and resize to basic Adapt widt
 * wide: 900
 
 
+test
+
+
 ```
 adapt-image-resize --crop
 ```
